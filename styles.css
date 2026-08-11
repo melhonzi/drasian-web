@@ -419,3 +419,9 @@ strong{font-weight:700}
 .sci-grid .c .n{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;color:#9A9AA5;margin-bottom:12px}
 .sci-grid .c h3{color:#fff;font-size:18px;margin-bottom:8px}
 .sci-grid .c p{margin:0;color:#B4B4C0;font-size:14px;line-height:1.6}
+.lab-principal{margin:0}
+.lab-principal img{width:100%;max-height:460px;object-fit:cover;border-radius:16px;display:block}
+.lab-principal figcaption{margin-top:10px;font-size:11px;letter-spacing:.06em;color:var(--ink-mute);text-transform:uppercase}
+.founder-sec--sec .founder-grid{grid-template-columns:300px 1fr;align-items:center}
+.founder-sec--sec .founder-photo img{border-radius:14px}
+@media(max-width:760px){.founder-sec--sec .founder-grid{grid-template-columns:1fr}.founder-sec--sec .founder-photo{max-width:340px}}
