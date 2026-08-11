@@ -185,6 +185,15 @@ strong{font-weight:700}
 .footer-legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:22px;
   font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;color:#8A8A95}
 @media(min-width:820px){.footer-grid{grid-template-columns:1.5fr repeat(3,1fr);gap:48px}}
+.prod-list{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0 8px}
+@media(min-width:640px){.prod-list{grid-template-columns:1fr 1fr}}
+.prod-item{display:flex;flex-direction:column;gap:3px;padding:16px 18px;border:1px solid var(--silver);border-radius:14px;background:#fff;transition:border-color .15s,transform .15s}
+.prod-item:hover{border-color:var(--ink);transform:translateY(-2px)}
+.pi-name{font-weight:700;font-size:16px;letter-spacing:-.01em;color:var(--ink)}
+.pi-meta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--ink-mute);text-transform:uppercase}
+.pi-go{margin-top:8px;font-size:13px;font-weight:600;color:var(--ink)}
+.mundo-prods{display:block;font-size:12.5px;line-height:1.55;color:var(--ink-soft);margin:2px 0 16px}
+.mp-lbl{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);font-style:normal;margin-bottom:3px}
 .footer-map{margin:26px 0 4px}
 .footer-map iframe{display:block;filter:grayscale(.3) contrast(1.05)}
 
