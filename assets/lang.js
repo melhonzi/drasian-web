@@ -33,3 +33,5 @@
   if(document.readyState!=='loading') apply(window.__lang);
   else document.addEventListener('DOMContentLoaded', function(){ apply(window.__lang); });
 })();
+/* carga extras globales (footer marca + WhatsApp flotante + acento holográfico) */
+(function(){var s=document.createElement('script');s.src='/assets/site-extras.js';s.defer=true;document.head.appendChild(s);})();
