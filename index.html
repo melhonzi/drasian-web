@@ -58,34 +58,39 @@
 
 <main>
 
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow" data-pt="DERMOCOSMÉTICA HONESTA / PARAGUAI" data-en="HONEST DERMOCOSMETICS / PARAGUAY">DERMOCOSMÉTICA HONESTA / PARAGUAY</p>
-      <h1 data-pt="Você não precisa de produtos mágicos. Precisa da verdade." data-en="You don't need magic products. You need the truth.">No necesitás productos mágicos. Necesitás la verdad.</h1>
-      <p class="lead" data-pt="O ativo e a verdade, sempre à vista. Fórmulas que cumprem para cabelo, pele e corpo — desenvolvidas e feitas no Paraguai, na Blondas Labs." data-en="The active and the truth, always in plain sight. Formulas that deliver for hair, skin and body — developed and made in Paraguay, at Blondas Labs.">El activo y la verdad, siempre a la vista. Fórmulas que cumplen para cabello, piel y cuerpo — desarrolladas y hechas en Paraguay, en Blondas Labs.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="/#catalogo" data-pt="Ver os produtos" data-en="See the products">Ver los productos</a>
-        <a class="btn btn-ghost" href="/#activos" data-pt="Comece pelo seu ativo" data-en="Start with your active">Empezá por tu activo</a>
-      </div>
-      <div class="hero-stats">
-        <div><div class="num">100%</div><div class="lbl" data-pt="Feito no<br>Paraguai" data-en="Made in<br>Paraguay">Hecho en<br>Paraguay</div></div>
-        <div><div class="num">13</div><div class="lbl" data-pt="Ativos<br>à vista" data-en="Actives<br>in plain sight">Activos<br>a la vista</div></div>
-        <div><div class="num">0</div><div class="lbl" data-pt="Promessas<br>vazias" data-en="Empty<br>promises">Promesas<br>vacías</div></div>
+<!-- HERO BANNER (deslizable) -->
+<section class="hero-carousel" id="top" aria-roledescription="carrusel" aria-label="Novedades Dr. Asian">
+  <div class="hc-track">
+    <div class="hc-slide">
+      <img class="hc-bg" src="/assets/banner-caspa.webp" alt="Shampoo Detox Control Caspa Dr. Asian" width="1800" height="1013">
+      <div class="hc-copy">
+        <p class="eyebrow" data-pt="NOVO · LINHA CONTROL CASPA" data-en="NEW · DANDRUFF CONTROL LINE">NUEVO · LÍNEA CONTROL CASPA</p>
+        <h1 data-pt="Shampoo Detox Control Caspa" data-en="Detox Dandruff Control Shampoo">Shampoo Detox Control Caspa</h1>
+        <p class="lead" data-pt="6 ativos que desprendem a caspa, controlam a oleosidade e refrescam o couro cabeludo." data-en="6 actives that lift dandruff, control oil and refresh the scalp.">6 activos que desprenden la caspa, controlan la oleosidad y refrescan el cuero cabelludo.</p>
+        <a class="hc-soon" href="/productos/shampoo-control-caspa.html" data-pt="Em breve →" data-en="Coming soon →">Próximamente →</a>
       </div>
     </div>
-    <div class="hero-media">
-      <img class="holo" src="/assets/holo-bg.webp" alt="" width="1254" height="1254" aria-hidden="true">
-      <div class="hero-stage">
-        <a class="hero-product" href="/productos/tonico-glicolico.html" aria-label="Tónico de Ácido Glicólico — ver producto">
-          <img src="/assets/prod-tonico-glicolico-frasco.webp" alt="Tónico de Ácido Glicólico Dr. Asian, producto estrella" width="1080" height="1350">
-        </a>
-        <a class="hero-tag mono" href="/productos/tonico-glicolico.html" data-pt="PRODUTO ESTRELA · TÔNICO GLICÓLICO" data-en="STAR PRODUCT · GLYCOLIC TONIC">PRODUCTO ESTRELLA · TÓNICO GLICÓLICO</a>
+    <div class="hc-slide hc-brand">
+      <img class="hc-bg" src="/assets/holo-bg.webp" alt="" aria-hidden="true">
+      <div class="hc-copy">
+        <p class="eyebrow" data-pt="DERMOCOSMÉTICA HONESTA / PARAGUAI" data-en="HONEST DERMOCOSMETICS / PARAGUAY">DERMOCOSMÉTICA HONESTA / PARAGUAY</p>
+        <h1 data-pt="Ciência asiática, feita no Paraguai." data-en="Asian science, made in Paraguay.">Ciencia asiática, hecha en Paraguay.</h1>
+        <p class="lead" data-pt="O ativo e a verdade, sempre à vista. Fórmulas que cumprem para cabelo, pele e corpo, feitas na Blondas Labs." data-en="The active and the truth, always in plain sight. Formulas that deliver for hair, skin and body, made at Blondas Labs.">El activo y la verdad, siempre a la vista. Fórmulas que cumplen para cabello, piel y cuerpo, hechas en Blondas Labs.</p>
+        <a class="btn btn-primary" href="/#catalogo" data-pt="Ver os produtos" data-en="See the products">Ver los productos</a>
       </div>
     </div>
   </div>
+  <button class="hc-arrow hc-prev" type="button" aria-label="Anterior" data-hc-prev>‹</button>
+  <button class="hc-arrow hc-next" type="button" aria-label="Siguiente" data-hc-next>›</button>
+  <div class="hc-dots"><button class="hc-dot active" type="button" data-hc-dot="0" aria-label="1"></button><button class="hc-dot" type="button" data-hc-dot="1" aria-label="2"></button></div>
 </section>
+
+<!-- FRANJA DE DATOS -->
+<section class="hero-stats-strip"><div class="wrap">
+  <div><div class="num">100%</div><div class="lbl" data-pt="Feito no Paraguai" data-en="Made in Paraguay">Hecho en Paraguay</div></div>
+  <div><div class="num">13</div><div class="lbl" data-pt="Ativos à vista" data-en="Actives in plain sight">Activos a la vista</div></div>
+  <div><div class="num">0</div><div class="lbl" data-pt="Promessas vazias" data-en="Empty promises">Promesas vacías</div></div>
+</div></section>
 
 <!-- FIRMA DE ORIGEN -->
 <section class="origin">
@@ -201,11 +206,6 @@
           <span class="go" data-pt="Ver produto →" data-en="See product →">Ver producto →</span>
         </div>
       </a>
-
-      <div class="pcard">
-        <div class="pimg ph"><span class="soon" data-pt="EM BREVE" data-en="COMING SOON">PRÓXIMAMENTE</span></div>
-        <div class="pbody"><span class="cat cat-glow">GLOW · FACIAL</span><h3 data-pt="Glass Skin Creme Facial" data-en="Glass Skin Facial Cream">Glass Skin Crema Facial</h3><p data-pt="Hidrata, dá glow e empareja o tom. Niacinamida." data-en="Hydrates, adds glow and evens the tone. Niacinamide.">Hidrata, da glow y empareja el tono. Niacinamida.</p></div>
-      </div>
 
     </div>
   </div>
@@ -388,7 +388,15 @@
     <div class="col"><span class="h" data-pt="COMPRAR" data-en="SHOP">COMPRAR</span>
       <a href="https://blondas.com.py/collections/dr-asian" rel="noopener" data-pt="Loja" data-en="Store">Tienda</a><a href="/donde-comprar.html" data-pt="Onde comprar" data-en="Where to buy">Dónde comprar</a></div>
     <div class="col"><span class="h" data-pt="CONTATO" data-en="CONTACT">CONTACTO</span>
-      <a href="https://www.instagram.com/drasianlab" rel="noopener" target="_blank">Instagram</a><a href="https://www.tiktok.com/@drasianlab" rel="noopener" target="_blank">TikTok</a><a href="https://wa.me/595987210000?text=Hola%2C%20vengo%20de%20la%20web%20de%20Dr%20Asian%20y%20tengo%20dudas%20sobre%20unos%20productos" rel="noopener" target="_blank">WhatsApp</a></div>
+      <a href="https://wa.me/595987210000?text=Hola%2C%20vengo%20de%20la%20web%20de%20Dr%20Asian%20y%20tengo%20dudas%20sobre%20unos%20productos" rel="noopener" target="_blank">WhatsApp +595 987 210 000</a>
+      <a href="https://www.instagram.com/drasianlab" rel="noopener" target="_blank">Instagram · Dr. Asian</a>
+      <a href="https://www.tiktok.com/@drasianlab" rel="noopener" target="_blank">TikTok · Dr. Asian</a>
+      <a href="https://www.instagram.com/blondascia" rel="noopener" target="_blank">Instagram · Blondas</a>
+      <a href="https://www.tiktok.com/@blondascia" rel="noopener" target="_blank">TikTok · Blondas</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Mariscal+L%C3%B3pez+4747+casi+Nicanor+Torales+Asunci%C3%B3n" rel="noopener" target="_blank" data-pt="Como chegar (mapa)" data-en="Get directions (map)">Cómo llegar (mapa)</a></div>
+  </div>
+  <div class="footer-map">
+    <iframe title="BLONDAS HOUSE BEAUTY — Mariscal López 4747" src="https://www.google.com/maps?q=Mariscal%20L%C3%B3pez%204747%20casi%20Nicanor%20Torales%20Asunci%C3%B3n&output=embed" width="100%" height="220" style="border:0;border-radius:14px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
   <div class="footer-legal">
     <span>© 2026 BLONDAS LABS S.A. · SAN LORENZO, PARAGUAY</span>
@@ -396,5 +404,8 @@
   </div>
 </footer>
 <script src="/assets/lang.js" defer></script>
+<script>
+(function(){var track=document.querySelector('.hc-track');if(!track)return;var slides=track.children,n=slides.length,i=0,timer;var dots=document.querySelectorAll('[data-hc-dot]');function go(k){i=(k+n)%n;track.style.transform='translateX(-'+(i*100)+'%)';dots.forEach(function(d,j){d.classList.toggle('active',j===i)})}function next(){go(i+1)}function prev(){go(i-1)}function reset(){clearInterval(timer);timer=setInterval(next,6000)}var nx=document.querySelector('[data-hc-next]'),pv=document.querySelector('[data-hc-prev]');if(nx)nx.addEventListener('click',function(){next();reset()});if(pv)pv.addEventListener('click',function(){prev();reset()});dots.forEach(function(d,j){d.addEventListener('click',function(){go(j);reset()})});reset()})();
+</script>
 </body>
 </html>
