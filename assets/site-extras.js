@@ -104,3 +104,87 @@
     document.body.appendChild(a);
   }
 })();
+
+/* ---------- reseñas (display) : lee /resenas.json y muestra en home + fichas ---------- */
+(function () {
+  var css = document.createElement("style");
+  css.textContent = "\
+  .dax-rv{padding:64px 0;background:var(--bone,#F7F4EE)}\
+  .dax-rv-wrap{max-width:1200px;margin:0 auto;padding:0 20px}\
+  @media(min-width:820px){.dax-rv-wrap{padding:0 44px}}\
+  .dax-rv-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:28px}\
+  .dax-rv-ttl{font-size:clamp(24px,4vw,36px);font-weight:800;letter-spacing:-.02em;max-width:520px;margin:0}\
+  .dax-rv-eye{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-mute,#6b6b76);margin:0 0 10px}\
+  .dax-rv-agg{display:flex;align-items:center;gap:14px}\
+  .dax-rv-avg{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1}\
+  .dax-rv-stars{display:inline-flex;gap:1px;color:#0A0A0A}\
+  .dax-rv-stars svg{width:16px;height:16px}\
+  .dax-rv-meta{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute,#6b6b76)}\
+  .dax-rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}\
+  @media(max-width:900px){.dax-rv-grid{grid-template-columns:1fr}}\
+  .dax-rv-card{background:#fff;border:1px solid var(--line,#E6E9EE);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px}\
+  .dax-rv-top{display:flex;align-items:center;justify-content:space-between}\
+  .dax-rv-ver{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#3a8f5b}\
+  .dax-rv-text{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink-soft,#3A3A44)}\
+  .dax-rv-who{display:flex;align-items:center;gap:12px;margin-top:auto}\
+  .dax-rv-who b{font-size:14px}\
+  .dax-rv-city{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute,#6b6b76);margin-top:2px}\
+  .dax-rv-ph{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none}\
+  .dax-rv-cta{display:inline-block;margin-top:26px;padding:14px 26px;background:var(--ink,#0A0A0A);color:#fff;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none}\
+  .dax-rv-empty{background:#fff;border:1px dashed var(--line,#E6E9EE);border-radius:14px;padding:28px;text-align:center}\
+  ";
+  document.head.appendChild(css);
+
+  var STAR = '<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 15l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>';
+  function stars(n){var s='';for(var i=0;i<5;i++)s+=STAR;return '<span class="dax-rv-stars">'+s+'</span>';}
+  function esc(t){var d=document.createElement('div');d.textContent=t||'';return d.innerHTML;}
+  function card(r){
+    var ph = r.foto ? '<img class="dax-rv-ph" src="'+esc(r.foto)+'" alt="Foto de '+esc(r.nombre)+'">' : '';
+    var ver = (r.verificada!==false) ? '<span class="dax-rv-ver">✓ Compra verificada</span>' : '';
+    var city = esc(r.ciudad||'') + (r.zona ? ' · '+esc(r.zona) : '');
+    return '<article class="dax-rv-card"><div class="dax-rv-top">'+stars(r.rating||5)+ver+'</div>'+
+      '<p class="dax-rv-text">'+esc(r.texto)+'</p>'+
+      '<div class="dax-rv-who">'+ph+'<span><b>'+esc(r.nombre||'Cliente')+'</b><span class="dax-rv-city">'+city+'</span></span></div></article>';
+  }
+  function avg(list){var s=0;list.forEach(function(r){s+=(+r.rating||5);});return list.length?(s/list.length):0;}
+
+  var path = location.pathname;
+  var mProd = path.match(/\/productos\/([^\/.]+)\.html/);
+  var isHome = path==='/' || /\/index\.html$/.test(path);
+  if(!mProd && !isHome) return;
+  var footer = document.querySelector(".dax-brand, .site-footer, footer");
+  if(!footer) return;
+
+  fetch('/resenas.json').then(function(r){return r.json();}).catch(function(){return [];}).then(function(all){
+    all = Array.isArray(all)?all:[];
+    var sec = document.createElement('section');
+    sec.className = 'dax-rv';
+    var html = '';
+    if(mProd){
+      var handle = mProd[1];
+      var list = all.filter(function(r){return (r.producto||'').toLowerCase().indexOf(handle)>-1;});
+      var cta = '<a class="dax-rv-cta" href="/resena.html?producto='+handle+'">Dejá tu reseña</a>';
+      if(list.length){
+        html = '<div class="dax-rv-wrap"><div class="dax-rv-head"><div><p class="dax-rv-eye">Reseñas</p>'+
+          '<div class="dax-rv-agg"><span class="dax-rv-avg">'+avg(list).toFixed(1)+'</span><div>'+stars(5)+
+          '<div class="dax-rv-meta">'+list.length+' reseña'+(list.length>1?'s':'')+'</div></div></div></div>'+cta+'</div>'+
+          '<div class="dax-rv-grid">'+list.slice(0,9).map(card).join('')+'</div></div>';
+      } else {
+        html = '<div class="dax-rv-wrap"><p class="dax-rv-eye">Reseñas</p><h2 class="dax-rv-ttl">¿Ya lo probaste?</h2>'+
+          '<div class="dax-rv-empty" style="margin-top:16px"><p style="margin:0 0 16px;color:var(--ink-soft,#3A3A44)">Sé la primera en contar tu experiencia con este producto.</p>'+cta+'</div></div>';
+      }
+    } else { // home
+      var dest = all.filter(function(r){return r.destacada;});
+      if(!dest.length) dest = all.slice(0,6);
+      if(!dest.length) return; // sin reseñas: no mostrar bloque vacío en la home
+      html = '<div class="dax-rv-wrap"><div class="dax-rv-head"><div><p class="dax-rv-eye">Reseñas</p>'+
+        '<h2 class="dax-rv-ttl">Lo que dicen quienes ya lo usan</h2></div>'+
+        '<div class="dax-rv-agg"><span class="dax-rv-avg">'+avg(all).toFixed(1)+'</span><div>'+stars(5)+
+        '<div class="dax-rv-meta">'+all.length+' reseñas</div></div></div></div>'+
+        '<div class="dax-rv-grid">'+dest.slice(0,6).map(card).join('')+'</div></div>';
+    }
+    if(!html) return;
+    sec.innerHTML = html;
+    footer.insertAdjacentElement('beforebegin', sec);
+  });
+})();
