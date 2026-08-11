@@ -188,8 +188,14 @@ strong{font-weight:700}
 /* Casos de uso — hub cards */
 .case-list{display:grid;grid-template-columns:1fr;gap:18px;margin:26px 0 8px}
 @media(min-width:760px){.case-list{grid-template-columns:1fr 1fr}}
-.case-card{display:flex;flex-direction:column;gap:8px;padding:26px;border:1px solid var(--silver);border-radius:18px;background:#fff;border-top:4px solid var(--acc,var(--ink));transition:transform .15s,box-shadow .15s}
+.case-card{display:flex;flex-direction:column;gap:8px;padding:0 0 24px;border:1px solid var(--silver);border-radius:18px;overflow:hidden;background:#fff;border-top:4px solid var(--acc,var(--ink));transition:transform .15s,box-shadow .15s}
 .case-card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(10,10,10,.08)}
+.cc-img{display:block;aspect-ratio:16/10;overflow:hidden;background:var(--bone);margin-bottom:6px}
+.cc-img img{width:100%;height:100%;object-fit:cover;display:block}
+.case-card>.cc-tag,.case-card>.cc-title,.case-card>.cc-desc,.case-card>.cc-go{padding-left:26px;padding-right:26px}
+.case-hero{margin:22px 0 8px}
+.case-hero img{width:100%;max-height:440px;object-fit:cover;border-radius:16px;display:block}
+.case-hero figcaption{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--ink-mute);text-transform:uppercase;margin-top:10px}
 .cc-tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)}
 .cc-title{font-size:22px;font-weight:700;letter-spacing:-.01em;line-height:1.15;color:var(--ink)}
 .cc-desc{font-size:14.5px;color:var(--ink-soft);line-height:1.5}
