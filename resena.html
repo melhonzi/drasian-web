@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es-PY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dejá tu reseña · Dr. Asian Beauty Lab</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Contá tu experiencia con los productos Dr. Asian. Tu reseña ayuda a otras personas a elegir.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.rf-wrap{max-width:620px;margin:0 auto;padding:40px 20px 80px}
+.rf-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-mute);margin:0 0 12px}
+.rf-h1{font-size:clamp(28px,6vw,42px);font-weight:800;letter-spacing:-.025em;line-height:1.05;margin:0 0 12px}
+.rf-dek{color:var(--ink-soft);font-size:16px;margin:0 0 28px}
+.rf-field{margin:0 0 20px}
+.rf-label{display:block;font-size:13px;font-weight:600;margin:0 0 8px}
+.rf-input,.rf-textarea,.rf-select{width:100%;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-family:inherit;font-size:15px;background:#fff;color:var(--ink)}
+.rf-input:focus,.rf-textarea:focus,.rf-select:focus{outline:none;border-color:var(--ink)}
+.rf-textarea{min-height:130px;resize:vertical;line-height:1.5}
+.rf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.rf-row{grid-template-columns:1fr}}
+.rf-stars{display:flex;gap:6px;margin:2px 0}
+.rf-star{cursor:pointer;color:var(--line);transition:color .1s;background:none;border:none;padding:0}
+.rf-star svg{width:34px;height:34px;display:block}
+.rf-star.on{color:#0A0A0A}
+.rf-note{font-size:12.5px;color:var(--ink-mute);line-height:1.5;margin:6px 0 0}
+.rf-btn{width:100%;padding:16px;background:var(--ink);color:#fff;border:none;border-radius:999px;font-size:16px;font-weight:600;cursor:pointer}
+.rf-btn:hover{background:#2A2A32}
+.rf-legal{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.02em;text-transform:none;color:var(--ink-mute);line-height:1.5;margin-top:18px}
+.rf-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-mute);margin-bottom:24px}
+.rf-ok{display:none;text-align:center;padding:30px 0}
+.rf-ok svg{width:56px;height:56px;color:#3a8f5b;margin:0 auto 14px}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span data-pt="Laboratório próprio no Paraguai" data-en="Our own lab in Paraguay">Laboratorio propio en Paraguay</span>
+  <span class="sep">/</span>
+  <span>Dr. Asian · Blondas</span>
+</div>
+
+<div class="rf-wrap">
+  <a class="rf-back" href="/">← <span data-pt="Voltar" data-en="Back">Volver</span></a>
+
+  <form id="rf-form" novalidate>
+    <p class="rf-eyebrow" data-pt="SUA EXPERIÊNCIA" data-en="YOUR EXPERIENCE">TU EXPERIENCIA</p>
+    <h1 class="rf-h1" data-pt="Deixe a sua avaliação" data-en="Leave your review">Dejá tu reseña</h1>
+    <p class="rf-dek" data-pt="Contá cómo te fue con el producto. Tu experiencia real ayuda a otras personas a decidir — y a nosotros a mejorar." data-en="Tell us how the product worked for you. Your real experience helps others decide.">Contá cómo te fue con el producto. Tu experiencia real ayuda a otras personas a decidir — y a nosotros a mejorar.</p>
+
+    <div class="rf-field">
+      <label class="rf-label" for="rf-prod" data-pt="Produto" data-en="Product">Producto</label>
+      <select class="rf-select" id="rf-prod">
+        <option value="Tónico de Ácido Glicólico">Tónico de Ácido Glicólico</option>
+        <option value="Tónico Pantenol Pro-Vitamina B5">Tónico Pantenol Pro-Vitamina B5</option>
+        <option value="Tónico Detox Facial">Tónico Detox Facial</option>
+        <option value="Limpiador Facial Detox">Limpiador Facial Detox</option>
+        <option value="Shampoo Detox Control Caspa">Shampoo Detox Control Caspa</option>
+        <option value="Tónico Detox Control Caspa">Tónico Detox Control Caspa</option>
+        <option value="Shampoo Vital Crece Pelo">Shampoo Vital Crece Pelo</option>
+        <option value="Tónico Vital Crece Pelo">Tónico Vital Crece Pelo</option>
+        <option value="Otro producto Dr. Asian">Otro producto Dr. Asian</option>
+      </select>
+    </div>
+
+    <div class="rf-field">
+      <label class="rf-label" data-pt="A sua nota" data-en="Your rating">Tu puntaje</label>
+      <div class="rf-stars" id="rf-stars" role="radiogroup" aria-label="Puntaje"></div>
+    </div>
+
+    <div class="rf-row">
+      <div class="rf-field">
+        <label class="rf-label" for="rf-nombre" data-pt="Nome" data-en="Name">Nombre</label>
+        <input class="rf-input" id="rf-nombre" type="text" autocomplete="name" placeholder="Ej: Sofía G.">
+      </div>
+      <div class="rf-field">
+        <label class="rf-label" for="rf-ciudad" data-pt="Cidade" data-en="City">Ciudad</label>
+        <input class="rf-input" id="rf-ciudad" type="text" placeholder="Ej: Asunción">
+      </div>
+    </div>
+
+    <div class="rf-field">
+      <label class="rf-label" for="rf-texto" data-pt="A sua avaliação" data-en="Your review">Tu reseña</label>
+      <textarea class="rf-textarea" id="rf-texto" placeholder="¿Para qué lo usaste, qué notaste, en cuánto tiempo?"></textarea>
+      <p class="rf-note" data-pt="Se quiser, pode anexar a sua foto no WhatsApp que abre ao enviar." data-en="If you like, you can attach your photo in the WhatsApp that opens when you send.">📷 Si querés sumar tu foto (antes/después o del producto), podés adjuntarla en el WhatsApp que se abre al enviar.</p>
+    </div>
+
+    <button class="rf-btn" type="submit" data-pt="Enviar avaliação" data-en="Send review">Enviar mi reseña</button>
+    <p class="rf-legal" data-pt="Ao enviar, você autoriza a Dr. Asian a publicar a sua avaliação (nome e cidade) no site. Não publicamos e-mail nem telefone. Você pode pedir para removê-la quando quiser." data-en="By sending, you authorize Dr. Asian to publish your review (name and city) on the site. We never publish your email or phone. You can ask us to remove it anytime.">Al enviar, autorizás a Dr. Asian a publicar tu reseña (nombre y ciudad) en el sitio. No publicamos tu teléfono ni tu mail. Podés pedir que la saquemos cuando quieras.</p>
+  </form>
+
+  <div class="rf-ok" id="rf-ok">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+    <h2 class="rf-h1" style="font-size:26px" data-pt="Obrigada!" data-en="Thank you!">¡Gracias!</h2>
+    <p class="rf-dek" data-pt="Abrimos o WhatsApp para você enviar a sua avaliação. Se ainda não abriu, toque no botão." data-en="We opened WhatsApp so you can send your review. If it didn't open, tap the button.">Abrimos WhatsApp para que nos mandes tu reseña. Si no se abrió, tocá el botón.</p>
+    <a class="rf-btn" id="rf-walink" href="#" target="_blank" rel="noopener" style="display:inline-block;max-width:320px;text-decoration:none" data-pt="Abrir WhatsApp" data-en="Open WhatsApp">Abrir WhatsApp</a>
+  </div>
+</div>
+
+<script src="/assets/lang.js"></script>
+<script>
+(function(){
+  var WA="595987210000";
+  // producto desde ?producto=<handle o nombre>
+  var params=new URLSearchParams(location.search);
+  var pq=params.get('producto');
+  if(pq){
+    var sel=document.getElementById('rf-prod');
+    var found=[...sel.options].find(function(o){return o.value.toLowerCase().indexOf(pq.toLowerCase())>-1 || pq.toLowerCase().indexOf(o.value.toLowerCase().split(' ')[1]||'zzz')>-1;});
+    if(found) sel.value=found.value;
+  }
+  // estrellas
+  var rating=5, cont=document.getElementById('rf-stars');
+  var starSvg='<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 15l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>';
+  function draw(){[].forEach.call(cont.children,function(b,i){b.className='rf-star'+(i<rating?' on':'');});}
+  for(var i=1;i<=5;i++){(function(n){var b=document.createElement('button');b.type='button';b.className='rf-star';b.setAttribute('aria-label',n+' estrellas');b.innerHTML=starSvg;b.onclick=function(){rating=n;draw();};cont.appendChild(b);})(i);}
+  draw();
+
+  document.getElementById('rf-form').addEventListener('submit',function(e){
+    e.preventDefault();
+    var prod=document.getElementById('rf-prod').value;
+    var nombre=document.getElementById('rf-nombre').value.trim();
+    var ciudad=document.getElementById('rf-ciudad').value.trim();
+    var texto=document.getElementById('rf-texto').value.trim();
+    if(!texto){document.getElementById('rf-texto').focus();return;}
+    var msg="⭐ Reseña Dr. Asian\n"+
+      "Producto: "+prod+"\n"+
+      "Puntaje: "+rating+"/5\n"+
+      "Nombre: "+(nombre||"(sin nombre)")+"\n"+
+      "Ciudad: "+(ciudad||"-")+"\n"+
+      "Reseña: "+texto+"\n\n"+
+      "(Podés adjuntar tu foto en este chat 📷)";
+    var url="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
+    document.getElementById('rf-walink').href=url;
+    document.getElementById('rf-form').style.display='none';
+    document.getElementById('rf-ok').style.display='block';
+    window.open(url,'_blank');
+  });
+})();
+</script>
+</body>
+</html>
