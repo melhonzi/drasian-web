@@ -163,16 +163,11 @@
     if(mProd){
       var handle = mProd[1];
       var list = all.filter(function(r){return (r.producto||'').toLowerCase().indexOf(handle)>-1;});
-      var cta = '<a class="dax-rv-cta" href="/resena.html?producto='+handle+'">Dejá tu reseña</a>';
-      if(list.length){
-        html = '<div class="dax-rv-wrap"><div class="dax-rv-head"><div><p class="dax-rv-eye">Reseñas</p>'+
-          '<div class="dax-rv-agg"><span class="dax-rv-avg">'+avg(list).toFixed(1)+'</span><div>'+stars(5)+
-          '<div class="dax-rv-meta">'+list.length+' reseña'+(list.length>1?'s':'')+'</div></div></div></div>'+cta+'</div>'+
-          '<div class="dax-rv-grid">'+list.slice(0,9).map(card).join('')+'</div></div>';
-      } else {
-        html = '<div class="dax-rv-wrap"><p class="dax-rv-eye">Reseñas</p><h2 class="dax-rv-ttl">¿Ya lo probaste?</h2>'+
-          '<div class="dax-rv-empty" style="margin-top:16px"><p style="margin:0 0 16px;color:var(--ink-soft,#3A3A44)">Sé la primera en contar tu experiencia con este producto.</p>'+cta+'</div></div>';
-      }
+      if(!list.length) return; // sin reseñas aprobadas: no mostrar bloque (formulario pausado hasta el panel del Universo)
+      html = '<div class="dax-rv-wrap"><div class="dax-rv-head"><div><p class="dax-rv-eye">Reseñas</p>'+
+        '<div class="dax-rv-agg"><span class="dax-rv-avg">'+avg(list).toFixed(1)+'</span><div>'+stars(5)+
+        '<div class="dax-rv-meta">'+list.length+' reseña'+(list.length>1?'s':'')+'</div></div></div></div></div>'+
+        '<div class="dax-rv-grid">'+list.slice(0,9).map(card).join('')+'</div></div>';
     } else { // home
       var dest = all.filter(function(r){return r.destacada;});
       if(!dest.length) dest = all.slice(0,6);
