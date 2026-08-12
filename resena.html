@@ -117,25 +117,28 @@
   for(var i=1;i<=5;i++){(function(n){var b=document.createElement('button');b.type='button';b.className='rf-star';b.setAttribute('aria-label',n+' estrellas');b.innerHTML=starSvg;b.onclick=function(){rating=n;draw();};cont.appendChild(b);})(i);}
   draw();
 
+  // Reseñas BL (Universo): el formulario postea a nuestra API. Queda pendiente de aprobación.
+  var RBL_API='https://universo.blondas.com.py/api/resenas';
   document.getElementById('rf-form').addEventListener('submit',function(e){
     e.preventDefault();
     var prod=document.getElementById('rf-prod').value;
     var nombre=document.getElementById('rf-nombre').value.trim();
     var ciudad=document.getElementById('rf-ciudad').value.trim();
     var texto=document.getElementById('rf-texto').value.trim();
+    if(!nombre){document.getElementById('rf-nombre').focus();return;}
     if(!texto){document.getElementById('rf-texto').focus();return;}
-    var msg="⭐ Reseña Dr. Asian\n"+
-      "Producto: "+prod+"\n"+
-      "Puntaje: "+rating+"/5\n"+
-      "Nombre: "+(nombre||"(sin nombre)")+"\n"+
-      "Ciudad: "+(ciudad||"-")+"\n"+
-      "Reseña: "+texto+"\n\n"+
-      "(Podés adjuntar tu foto en este chat 📷)";
-    var url="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
-    document.getElementById('rf-walink').href=url;
-    document.getElementById('rf-form').style.display='none';
-    document.getElementById('rf-ok').style.display='block';
-    window.open(url,'_blank');
+    var handle=(pq||'').trim().toLowerCase();
+    var fd=new FormData();
+    fd.append('producto_handle', handle);
+    fd.append('marca','dr-asian');
+    fd.append('nombre', nombre);
+    fd.append('ciudad', ciudad);
+    fd.append('rating', rating);
+    fd.append('texto', texto + (handle?'':(prod?('\n('+prod+')'):'')));
+    fd.append('origen','drasian');
+    var btn=this.querySelector('[type=submit]'); if(btn) btn.disabled=true;
+    function done(){ document.getElementById('rf-form').style.display='none'; document.getElementById('rf-ok').style.display='block'; }
+    fetch(RBL_API,{method:'POST',body:fd}).then(function(r){return r.json();}).then(done).catch(done);
   });
 })();
 </script>

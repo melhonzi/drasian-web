@@ -155,15 +155,18 @@
   var footer = document.querySelector(".dax-brand, .site-footer, footer");
   if(!footer) return;
 
-  fetch('/resenas.json').then(function(r){return r.json();}).catch(function(){return [];}).then(function(all){
-    all = Array.isArray(all)?all:[];
+  // Reseñas BL (Universo): en producto trae las de ese producto; en home, las generales de la tienda.
+  var RBL_API = 'https://universo.blondas.com.py/api/resenas';
+  var rblUrl = mProd ? (RBL_API + '?producto=' + encodeURIComponent(mProd[1])) : RBL_API;
+  fetch(rblUrl).then(function(r){return r.json();}).catch(function(){return null;}).then(function(j){
+    var all = (j && j.ok && Array.isArray(j.resenas)) ? j.resenas : [];
+    var total = (j && j.resumen && j.resumen.total) || all.length;
     var sec = document.createElement('section');
     sec.className = 'dax-rv';
     var html = '';
     if(mProd){
-      var handle = mProd[1];
-      var list = all.filter(function(r){return (r.producto||'').toLowerCase().indexOf(handle)>-1;});
-      if(!list.length) return; // sin reseñas aprobadas: no mostrar bloque (formulario pausado hasta el panel del Universo)
+      var list = all;                        // la API ya filtró por producto
+      if(!list.length) return;               // sin reseñas aprobadas: no mostrar bloque
       html = '<div class="dax-rv-wrap"><div class="dax-rv-head"><div><p class="dax-rv-eye">Reseñas</p>'+
         '<div class="dax-rv-agg"><span class="dax-rv-avg">'+avg(list).toFixed(1)+'</span><div>'+stars(5)+
         '<div class="dax-rv-meta">'+list.length+' reseña'+(list.length>1?'s':'')+'</div></div></div></div></div>'+
@@ -171,11 +174,11 @@
     } else { // home
       var dest = all.filter(function(r){return r.destacada;});
       if(!dest.length) dest = all.slice(0,6);
-      if(!dest.length) return; // sin reseñas: no mostrar bloque vacío en la home
+      if(!dest.length) return;
       html = '<div class="dax-rv-wrap"><div class="dax-rv-head"><div><p class="dax-rv-eye">Reseñas</p>'+
         '<h2 class="dax-rv-ttl">Lo que dicen quienes ya lo usan</h2></div>'+
         '<div class="dax-rv-agg"><span class="dax-rv-avg">'+avg(all).toFixed(1)+'</span><div>'+stars(5)+
-        '<div class="dax-rv-meta">'+all.length+' reseñas</div></div></div></div>'+
+        '<div class="dax-rv-meta">'+total+' reseñas</div></div></div></div>'+
         '<div class="dax-rv-grid">'+dest.slice(0,6).map(card).join('')+'</div></div>';
     }
     if(!html) return;
