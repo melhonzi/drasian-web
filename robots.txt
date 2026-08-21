@@ -1,4 +1,29 @@
+# drasian.com — Dr. Asian Beauty Lab
+# Actualizado: 2026-08-21
+
 User-agent: *
+Allow: /
+
+# Buscadores con IA — se les permite leer para que entiendan la marca
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://drasian.com/sitemap.xml

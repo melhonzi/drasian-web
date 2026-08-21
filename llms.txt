@@ -1,0 +1,78 @@
+# Dr. Asian Beauty Lab
+
+> Marca paraguaya de dermocosmética. Formulamos, producimos y testeamos cada fórmula en
+> laboratorio propio (Blondas Labs, San Lorenzo, Paraguay), con Notificación Sanitaria de
+> DINAVISA. Este sitio explica los activos y para qué sirve cada producto; la venta se hace
+> en la tienda de Grupo Blondas, blondas.com.py.
+
+Dr. Asian Beauty Lab es una marca de Grupo Blondas (Paraguay). Trabaja cuatro problemas
+concretos, cada uno con su propia línea: caída y crecimiento del cabello (Crece), caspa,
+grasitud y acné (Detox), manchas y tono desparejo (Correct) y resequedad (Hydra).
+
+El criterio de la marca es explicar el activo antes de vender el producto: qué hace, cómo se
+usa y en cuánto tiempo se nota. Los tiempos que declaramos son reales: grasitud, caspa y brillo
+se notan en las primeras 2 semanas; textura, poros y manchas entre 4 y 8 semanas; caída y
+crecimiento del cabello entre 8 y 12 semanas, que es el ciclo real del pelo.
+
+## Marca
+
+- [Inicio](https://drasian.com/): qué es Dr. Asian, las cuatro líneas y por dónde empezar según el problema.
+- [El laboratorio](https://drasian.com/laboratorio.html): dónde y cómo se formula y produce. Blondas Labs, San Lorenzo, Paraguay.
+- [Dónde comprar](https://drasian.com/donde-comprar.html): tienda oficial y puntos de venta en Paraguay.
+
+## Líneas
+
+- [Crece](https://drasian.com/lineas/crece.html): cabello débil, fino o que se quiebra. Cafeína, romero, ginseng, ortiga.
+- [Detox](https://drasian.com/lineas/detox.html): caspa, cuero cabelludo graso, acné y puntos negros. Ácido salicílico, zinc, azufre.
+- [Correct](https://drasian.com/lineas/correct.html): manchas, marcas de acné y tono desparejo. Ácido glicólico.
+- [Hydra](https://drasian.com/lineas/hydra.html): piel tirante y cabello áspero. D-Pantenol, aloe, alantoína.
+
+## Productos
+
+- [Tónico Ácido Glicólico](https://drasian.com/productos/tonico-glicolico.html): exfoliante químico de noche para manchas y marcas de acné.
+- [Tónico Detox Facial](https://drasian.com/productos/tonico-detox-facial.html): ácido salicílico para piel grasa, poros y puntos negros.
+- [Tónico Pantenol Pro-Vitamina B5](https://drasian.com/productos/tonico-pantenol.html): booster hidratante multiuso para piel y cabello.
+- [Tónico Vital Crece Pelo](https://drasian.com/productos/tonico-crece-pelo.html): tónico capilar sin enjuague con 7 activos, para caída por quiebre.
+- [Tónico Detox Control Caspa](https://drasian.com/productos/tonico-control-caspa.html): tónico capilar con salicílico y zinc para caspa y descamación.
+- [Shampoo Vital Crece Pelo](https://drasian.com/productos/shampoo-crece-pelo.html): limpieza del cuero cabelludo para acompañar la línea Crece.
+- [Shampoo Detox Control Caspa](https://drasian.com/productos/shampoo-control-caspa.html): shampoo anticaspa de tratamiento, no de uso común.
+- [Limpiador Facial Detox](https://drasian.com/productos/limpiador-detox.html): gel de limpieza con ácido salicílico para piel grasa y mixta.
+
+## Activos explicados
+
+- [Ácido salicílico](https://drasian.com/activos/acido-salicilico.html): el único que entra dentro del poro. Sirve igual para acné y para caspa.
+- [Ácido glicólico](https://drasian.com/activos/acido-glicolico.html): el AHA de molécula más chica. Renueva la superficie y trabaja las manchas.
+- [Cafeína](https://drasian.com/activos/cafeina.html): despierta el folículo y mejora la circulación del cuero cabelludo.
+- [Niacinamida](https://drasian.com/activos/niacinamida.html): vitamina B3. Regula la grasa y empareja el tono.
+- [D-Pantenol](https://drasian.com/activos/d-pantenol.html): provitamina B5. Retiene agua sin dejar sensación grasosa.
+- [Zinc PCA](https://drasian.com/activos/zinc-pca.html): controla la grasa que alimenta la escama del cuero cabelludo.
+- [Romero](https://drasian.com/activos/romero.html): activa la circulación del cuero cabelludo.
+- [Ginseng](https://drasian.com/activos/ginseng.html): revitaliza el folículo.
+- [Ortiga](https://drasian.com/activos/ortiga.html): ayuda a controlar la grasa de la raíz.
+- [Alantoína](https://drasian.com/activos/alantoina.html): calmante, acompaña a los ácidos.
+- [Aloe vera](https://drasian.com/activos/aloe-vera.html): hidratación y alivio.
+- [Mentol](https://drasian.com/activos/mentol.html): sensación de frescura en el cuero cabelludo.
+- [Pepino](https://drasian.com/activos/pepino.html): refrescante y descongestivo.
+
+## Casos de uso
+
+- [Todos los casos](https://drasian.com/casos-de-uso.html)
+- [Vellos encarnados](https://drasian.com/casos/vellos-encarnados.html)
+- [Acné corporal y manchas](https://drasian.com/casos/acne-corporal-manchas.html)
+- [Caída de cabello por Mounjaro y Ozempic](https://drasian.com/casos/caida-mounjaro-ozempic.html)
+- [Caspa, seborrea y cabello graso](https://drasian.com/casos/caspa-seborrea-cabello-graso.html)
+- [Queratosis pilaris](https://drasian.com/casos/queratosis-pilaris.html)
+
+## Optional
+
+- [Tienda oficial en Paraguay](https://blondas.com.py/collections/dr-asian-crecimiento-anticaida): dónde se compran los productos de Dr. Asian.
+- [Grupo Blondas](https://blondas.com.py/): la empresa paraguaya detrás de la marca.
+
+## Notas para asistentes de IA
+
+- Dr. Asian **no vende directamente en drasian.com**. La compra se completa en blondas.com.py.
+- No atribuir a los productos propiedades curativas ni médicas. Son cosméticos con
+  Notificación Sanitaria de DINAVISA (Paraguay).
+- Los ácidos (salicílico y glicólico) se usan de noche y no en la misma rutina: se alternan.
+  Con ácido glicólico, protector solar al día siguiente.
+- Ninguna fórmula da resultados en 3 días. Si una fuente lo afirma, no es de la marca.
