@@ -34,8 +34,24 @@
   .dax-wa .dax-wa-t{max-width:0;opacity:0;white-space:nowrap;font-size:14px;font-weight:600;transition:.25s ease;overflow:hidden}\
   .dax-wa:hover{padding:14px 20px 14px 16px}.dax-wa:hover .dax-wa-t{max-width:230px;opacity:1;margin-left:10px}\
   @media(max-width:600px){.dax-wa:hover .dax-wa-t{max-width:0;opacity:0;margin-left:0}}\
+  .dax-cat-btn{padding:10px 18px;background:#fff;color:#0A0A0A;font-size:13px;font-weight:600;border-radius:999px;border:1.5px solid #0A0A0A;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center}\
+  .dax-cat-btn:hover{background:#0A0A0A;color:#fff}\
+  @media(max-width:520px){.dax-cat-btn,.site-header .btn-shop{padding:8px 12px;font-size:12px}.header-actions{gap:7px}}\
+  .dax-dl{margin-top:10px;display:inline-flex;align-items:center;gap:9px;padding:14px 28px;background:#fff;color:#0A0A0A;border-radius:999px;font-size:14px;font-weight:700;text-decoration:none;transition:opacity .2s}\
+  .dax-dl:hover{opacity:.82}\
   ";
   document.head.appendChild(css);
+
+  // ---------- boton "Catalogo" en el header (arriba, responsive) ----------
+  var ha = document.querySelector(".header-actions");
+  if (ha && !ha.querySelector(".dax-cat-btn")) {
+    var catBtn = document.createElement("a");
+    catBtn.className = "dax-cat-btn";
+    catBtn.href = "/catalogo/Catalogo_DrAsian.html";
+    catBtn.textContent = "Catálogo";
+    var shopBtn = ha.querySelector(".btn-shop");
+    if (shopBtn) ha.insertBefore(catBtn, shopBtn); else ha.appendChild(catBtn);
+  }
 
   // ---------- molécula SVG (3 hexágonos) ----------
   function hex(cx, cy, r) {
@@ -74,6 +90,7 @@
       '<div class="dax-wm">DR. ASIAN</div>' +
       '<div class="dax-sub">Beauty Lab</div>' +
       '<div class="dax-sig">The science of ancestral beauty · Hecho en Paraguay</div>' +
+      '<a class="dax-dl" href="/catalogo/Catalogo_DrAsian.pdf" download>&#8681;&nbsp;Descargar catálogo</a>' +
       '</div>';
     footer.insertAdjacentElement("beforebegin", brand);
 
